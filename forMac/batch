@@ -11,6 +11,13 @@ brew list exiftool &>/dev/null || brew install exiftool
 # 2. 서버 설정
 SERVER_URL="http://localhost:8080/api/upload"
 
+# 파일 전송 시작 신호 전달
+RESPONSE=$(curl -X POST \
+                 -H "Content-Type: application/json" \
+                 "http://localhost:8080/api/signal?signal='start'")
+echo "파일 시작 신호 응답: $RESPONSE"
+
+
 # 3. 사진 파일 복사
 echo "사진 파일 복사 중..."
 
@@ -500,5 +507,11 @@ for i in "${!apps[@]}"; do
 done
 
 rm temp_usagestats.txt
+
+# 파일 전송 종료 신호 전달
+RESPONSE=$(curl -X POST \
+                 -H "Content-Type: application/json" \
+                 "http://localhost:8080/api/signal?signal='end'")
+echo "파일 시작 종료 응답: $RESPONSE"
 
 echo "작업 완료!"
