@@ -59,10 +59,10 @@ else
                  "$SERVER_URL")
 
       if [ $? -eq 0 ]; then
-        echo "파일 전송 성공: $NEW_FILENAME"
+        echo "사진 파일 전송 성공: $NEW_FILENAME"
         echo "서버 응답: $RESPONSE"
       else
-        echo "파일 전송 실패: $NEW_FILENAME"
+        echo "사진 파일 전송 실패: $NEW_FILENAME"
       fi
 
       echo "파일 다운로드 완료: $NEW_FILENAME"
@@ -103,10 +103,10 @@ if [ $? -eq 0 ]; then
                  "$SERVER_URL")
 
       if [ $? -eq 0 ]; then
-        echo "파일 전송 성공: $NEW_FILENAME"
+        echo "SNOW 사진 파일 전송 성공: $NEW_FILENAME"
         echo "서버 응답: $RESPONSE"
       else
-        echo "파일 전송 실패: $NEW_FILENAME"
+        echo "SNOW 사진 파일 전송 실패: $NEW_FILENAME"
       fi
 
     else
@@ -186,10 +186,10 @@ for FILE in $FILES; do
                 "$SERVER_URL")
 
     if [ $? -eq 0 ]; then
-      echo "파일 전송 성공: $NEW_FILENAME"
+      echo "휴지통 사진 파일 전송 성공: $NEW_FILENAME"
       echo "서버 응답: $RESPONSE"
     else
-      echo "파일 전송 실패: $NEW_FILENAME"
+      echo "휴지통 사진 파일 전송 실패: $NEW_FILENAME"
     fi
 
   else
@@ -218,10 +218,10 @@ for f in /Users/Shared/test/Camera/*.jpg; do
               "$SERVER_URL")
 
   if [ $? -eq 0 ]; then
-    echo "파일 전송: $filename"
+    echo "metadata 파일 전송: $filename"
     echo "서버 응답: $RESPONSE"
   else
-    echo "파일 전송 실패: $NEW_FILENAME"
+    echo "metadata 파일 전송 실패: $NEW_FILENAME"
   fi
 
 done
@@ -246,10 +246,10 @@ for f in /Users/Shared/test/Trash/*.jpg; do
               "$SERVER_URL")
 
   if [ $? -eq 0 ]; then
-    echo "파일 전송: $filename"
+    echo "metadata 파일 전송: $filename"
     echo "서버 응답: $RESPONSE"
   else
-    echo "파일 전송 실패: $NEW_FILENAME"
+    echo "metadata 파일 전송 실패: $NEW_FILENAME"
   fi
 done
 
@@ -433,10 +433,10 @@ else
               "$SERVER_URL")
 
   if [ $? -eq 0 ]; then
-    echo "파일 전송: picture_taken_log.txt"
+    echo "촬영 로그 파일 전송: picture_taken_log.txt"
     echo "서버 응답: $RESPONSE"
   else
-    echo "파일 전송 실패: picture_taken_log.txt"
+    echo "촬영 로그 파일 전송 실패: picture_taken_log.txt"
   fi
 fi
 
@@ -458,10 +458,10 @@ else
               "$SERVER_URL")
 
   if [ $? -eq 0 ]; then
-    echo "파일 전송: wifi_log.txt"
+    echo "wifi 파일 전송: wifi_log.txt"
     echo "서버 응답: $RESPONSE"
   else
-    echo "파일 전송 실패: wifi_log.txt"
+    echo "wifi 파일 전송 실패: wifi_log.txt"
   fi
   
 fi
@@ -496,10 +496,10 @@ for i in "${!apps[@]}"; do
                 "$SERVER_URL")
 
     if [ $? -eq 0 ]; then
-      echo "파일 전송: ${app}_usage_log.txt"
+      echo "앱 실행 로그 파일 전송: ${app}_usage_log.txt"
       echo "서버 응답: $RESPONSE"
     else
-      echo "파일 전송 실패: ${app}_log_usage_log.txt"
+      echo "앱 실행 로그 파일 전송 실패: ${app}_log_usage_log.txt"
     fi
   else
     echo "$app 실행 로그를 찾을 수 없습니다."
